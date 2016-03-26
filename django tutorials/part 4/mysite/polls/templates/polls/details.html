@@ -1,0 +1,17 @@
+<h1>{{ question.question_text }}</h1>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+<form action="{% url 'polls:vote' question.id %}" method="post">
+    <!-- polls.urls에서 name=vote의 url을 참조 question.id 값을 인자로 넘겨줌 -->
+{% csrf_token %}
+{% for choice in question.choice_set.all %}
+    <!-- choice 모델에서 question에 forign key로 연동된 choice 데이타를 iterator object로 넘겨줌
+         iterator는 리스트, 딕셔너리등을 포함하며 {1,2,3} 데이타를 왼쪽부터 차례대로 넘겨주는 object -->
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
+    <!-- forloop.counter는 for문이 3번 실행되면 3이다. -->
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
+{% endfor %}
+<input type="submit" value="Vote" />
+</form>
+

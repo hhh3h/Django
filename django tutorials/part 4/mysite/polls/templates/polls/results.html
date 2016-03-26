@@ -1,0 +1,11 @@
+<h1>{{ question.question_text }}</h1>
+
+<ul>
+{% for choice in question.choice_set.all %}
+    <li>{{ choice.choice_text }} -- {{ choice.votes }} vote{{ choice.votes|pluralize }}</li>
+    <!-- choice.votes는 Choice 함수의 votes 이며 | 다음에는 tag가 온다. pluralize는 djang tag로 복수형을 처리해 준다.
+         즉 choice.votes가 복수개이면 끝에 's'을 붙여 준다. -->
+{% endfor %}
+</ul>
+
+<a href="{% url 'polls:detail' question.id %}">Vote again?</a>
