@@ -1,4 +1,4 @@
 # GIT useful & simple commands
 ``` bash
-$ git clone https://github.com/hhh3h/study.git
+$ git clone https://github.com/hhh3h/Django.git
 ```
