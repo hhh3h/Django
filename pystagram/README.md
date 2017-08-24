@@ -1,7 +1,6 @@
 Pystagram
 =============
-> period: Setember
-* syntax: [hannal](Link: http://blog.hannal.com/category/start-with-django-webframework/)
+> Period: 8~9
 ***
 * functions
  * 사진
@@ -55,4 +54,9 @@ Pystagram
  * 이용자가 구독하는 팔로잉 페이지는 /users/<이용자 ID="">/following/
  * 이용자를 구독하는 팔로워 페이지는 /users/<이용자 ID="">/followers/
  * 구독하기 : /users/<이용자 ID="">/follow/ 
+
 ![Alt text](http://blog.hannal.com/assets/uploads/2014/08/01-Scene_flow.png)
+
+***
+* [hannal](Link: http://blog.hannal.com/category/start-with-django-webframework/)
+
