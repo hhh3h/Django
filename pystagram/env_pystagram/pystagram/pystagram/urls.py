@@ -29,4 +29,4 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
 ]
 
-urlpatterns += static('upload_files', document_root=settings.MEDIA_ROOT) # Automatic setting of MEDIA_ROOT  
+urlpatterns += static('/upload_files/', document_root=settings.MEDIA_ROOT) # Automatic setting of MEDIA_ROOT  

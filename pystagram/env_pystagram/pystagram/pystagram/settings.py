@@ -36,7 +36,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'django.contrib.staticfiles',
+    'django.contrib.staticfiles', # DEBUG=True? It can serve "STATIC_URL + STATICFILES_DIRS"
     'photos',
 ]
 
@@ -118,6 +118,11 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/' # http://localhost/assets/js/jquery-3.1.2.min.js
+STATICFILES_DIRS = ( # for developing (for Django framework access, DEBUG = True)
+    os.path.join(BASE_DIR, 'static'), # without , ? Its type is string
+)
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles') # python manage.py collectstatic (for webserver access, DEBUG = False)
+
 MEDIA_URL = '/upload_files/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
