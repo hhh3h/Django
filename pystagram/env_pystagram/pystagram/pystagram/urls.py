@@ -15,6 +15,8 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
+from django.conf import settings
+from django.conf.urls.static import static
 
 from photos.views import hello
 from photos.views import detail
@@ -22,6 +24,9 @@ from photos.views import detail
 urlpatterns = [
     #url(*regex, *view, name, kwargs[dict])
     url(r'^hello/$', hello),
-    url(r'^photos/(?P<pk>[0-9]+)/$', detail, name='detail'), # /photos/1/, /photos/1023/ (pk=1023)
+    url(r'^photos/(?P<pk>[0-9]+)/$', detail, name='detail'), # /photos/1/, /photos/1023/ (pk=1023), if not <pk>? it can work as positional argument.
+    url(r'^hidden-photos/(?P<pk>[0-9]+)$', detail, kwargs={'hidden':True}),
     url(r'^admin/', admin.site.urls),
 ]
+
+urlpatterns += static('upload_files', document_root=settings.MEDIA_ROOT) # Automatic setting of MEDIA_ROOT  
