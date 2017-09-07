@@ -59,4 +59,8 @@ Pystagram
 
 ***
 * [hannal](Link: http://blog.hannal.com/category/start-with-django-webframework/)
-
+***
+## Ubuntu
+```bash
+	$ sudo apt-get install python3-venv
+```
