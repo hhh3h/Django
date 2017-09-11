@@ -15,4 +15,4 @@ class PhotoForm(forms.ModelForm):
     class Meta: # o specify a custom widget for a field, use the widgets attribute of the inner Meta class
         model = Photo
         #fields = ('image','content',)
-        exclude = ('filtered_image',)
+        exclude = ('filtered_image', )
